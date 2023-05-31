@@ -288,3 +288,152 @@ function calcPrice() {
   })
   total.innerText = priceTotal;
 }
+// открытие оформления листа заказа
+window.addEventListener("click", (event) => {
+  if (event.target.dataset.order) {
+    const checkList = document.querySelector(".check-list");
+    checkList.classList.add("open")
+  }
+});
+
+// Name
+const name1 = document.querySelector("#name");
+name1.addEventListener("keyup", function(e) {
+  name1.classList.add("re");
+    let re = /^[A-ZА-ЯЁ]+$/i;
+    let rer = /^\S*$/;
+    const myPhone = document.getElementById('name').value;
+    let valid = re.test(myPhone);
+    let valid1 = rer.test(myPhone);
+ if (myPhone.length >=4 && valid && valid1){
+    name1.classList.add("rt");
+    document.getElementById('message').style.color="green";
+    output = 'The field is valid!';
+  } else {
+    name1.classList.remove("rt");
+    document.getElementById('message').style.color="red";
+    output = 'The field is invalid!';
+  }
+    document.getElementById('message').innerHTML = ``;
+    document.getElementById('message').innerHTML = document.getElementById('message').innerHTML+output+'<hr />';
+
+})
+
+//Surname
+const surname = document.querySelector("#surname");
+surname.addEventListener("keyup", function(e) {
+  surname.classList.add("re");
+    let re = /^[A-ZА-ЯЁ]+$/i;
+    let rer = /^\S*$/;
+    const myPhone = document.getElementById('surname').value;
+    let valid = re.test(myPhone);
+    let valid1 = rer.test(myPhone);
+ if (myPhone.length >=5 && valid && valid1){
+    surname.classList.add("rt");
+    document.getElementById('messageSurname').style.color="green";
+    output = 'The field is valid!';
+  } else {
+    surname.classList.remove("rt");
+    document.getElementById('message').style.color="red";
+    output = 'The field is invalid!';
+  }
+    document.getElementById('messageSurname').innerHTML = ``;
+    document.getElementById('messageSurname').innerHTML = document.getElementById('messageSurname').innerHTML+output+'<hr />';
+})
+
+// Дата доставки
+function now(now) {
+  var now = (new Date(new Date() * 1 + 24*60*60*1000)).toISOString().slice(0,10);
+  let dateMin = document.querySelector("#date").min = now;
+}
+now();
+
+// улица
+const street = document.querySelector("#street");
+street.addEventListener("keyup", function(e) {
+  street.classList.add("re");
+    let re = /^[0-9A-ZА-ЯЁ]+$/i; // только буквы и цифры
+    let rer = /^\S*$/; //без пробелов
+    const myPhone = document.getElementById('street').value;
+    let valid = re.test(myPhone);
+    let valid1 = rer.test(myPhone);
+ if (myPhone.length >=5 && valid && valid1){
+    street.classList.add("rt");
+    document.getElementById('messageStreet').style.color="green";
+    output = 'The field is valid!';
+  } else {
+    street.classList.remove("rt");
+    document.getElementById('message').style.color="red";
+    output = 'The field is invalid!';
+  }
+    document.getElementById('messageStreet').innerHTML = ``;
+    document.getElementById('messageStreet').innerHTML = document.getElementById('messageStreet').innerHTML+output+'<hr />';
+})
+// номер дома
+const house = document.querySelector("#house");
+house.addEventListener("keyup", function(e) {
+  house.classList.add("re");
+    let re = /^[0-9]+$/i; // только цифры
+    let rer = /^\S*$/; //без пробелов
+    const myPhone = document.getElementById('house').value;
+    let valid = re.test(myPhone);
+    let valid1 = rer.test(myPhone);
+ if (valid && valid1){
+    house.classList.add("rt");
+    document.getElementById('messageHouse').style.color="green";
+    output = 'The field is valid!';
+  } else {
+    house.classList.remove("rt");
+    document.getElementById('message').style.color="red";
+    output = 'The field is invalid!';
+  }
+    document.getElementById('messageHouse').innerHTML = ``;
+    document.getElementById('messageHouse').innerHTML = document.getElementById('messageHouse').innerHTML+output+'<hr />';
+})
+
+//функция на проверку номера телефона
+const phone = document.querySelector("#phone");
+phone.addEventListener("keyup", function(e) {
+  phone.classList.add("re");
+    var re = /^[\d\+][\d\(\)\ -]{3,14}\d$/;; // только цифры
+    let rer = /^\S*$/; //без пробелов
+    const myPhone = document.getElementById('phone').value;
+    let valid = re.test(myPhone);
+    let valid1 = rer.test(myPhone);
+ if (valid && valid1){
+    phone.classList.add("rt");
+    document.getElementById('messagePhone').style.color="green";
+    output = 'The field is valid!';
+  } else {
+    phone.classList.remove("rt");
+    document.getElementById('message').style.color="red";
+    output = 'The field is invalid!';
+  }
+    document.getElementById('messagePhone').innerHTML = ``;
+    document.getElementById('messagePhone').innerHTML = document.getElementById('messagePhone').innerHTML+output+'<hr />';
+})
+
+// способ оплаты +
+// 2 подарка
+window.addEventListener("click", function(e) {
+  var inputs = document.getElementsByName("checkbox");
+  document.getElementById('messageGifts').innerHTML = `выбери себе подарок`;
+  var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+
+  if (checkboxes.length = 1) {
+    document.getElementById('messageGifts').innerHTML = ``;
+  }
+    if (checkboxes.length ==2) {
+    document.getElementById('messageGifts').style.color="green";
+    document.getElementById('messageGifts').innerHTML = `Прекрасный выбор!`;
+  }
+  if (checkboxes.length >2) {
+    for (let index = 0; index < inputs.length; index++) {
+      inputs[index].checked = false; 
+      document.getElementById('messageGifts').style.color="red";
+      output = 'The field is invalid!Choose 2 gifts.';
+    }  
+    document.getElementById('messageGifts').innerHTML = ``;
+    document.getElementById('messageGifts').innerHTML = document.getElementById('messageGifts').innerHTML+output+'<hr />'; 
+  }
+})
