@@ -437,3 +437,49 @@ window.addEventListener("click", function(e) {
     document.getElementById('messageGifts').innerHTML = document.getElementById('messageGifts').innerHTML+output+'<hr />'; 
   }
 })
+
+
+// открытие результата листа заказа
+window.addEventListener("click", (event) => {
+  if (event.target.dataset.order1) {
+    const checkList = document.querySelector(".check-list-complete");
+    checkList.classList.add("open")
+  }
+});
+
+// ========================================================
+
+
+
+
+
+
+
+document.querySelector(".complete").onclick = () => {
+
+  document.querySelector(".name").innerText = document.querySelector(".name").innerText+document.querySelector("#name").value;
+  document.querySelector(".surname").innerText = document.querySelector(".surname").innerText+document.querySelector("#surname").value;
+  document.querySelector(".date").innerText = document.querySelector(".date").innerText+document.querySelector("#date").value;
+  document.querySelector(".phone").innerText = document.querySelector(".phone").innerText+document.querySelector("#phone").value;
+  document.querySelector(".street").innerText = document.querySelector(".street").innerText+document.querySelector("#street").value;
+  document.querySelector(".house").innerText = document.querySelector(".house").innerText+document.querySelector("#house").value;
+  const selected = document.querySelector('input[name="radio"]:checked').value;
+  document.querySelector(".payment").innerText = document.querySelector(".payment").innerText+document.querySelector('input[name="radio"]:checked').value;
+
+function valueGet() {
+  let all = document.querySelectorAll('input[data-checkbox="checkbox"]:checked');
+  console.log(all);
+  let text = document.querySelector(".gifts").innerText;
+  console.log(text);
+  for (let i = 0; i < all.length; i++) {
+    const element = all[i].value;
+    console.log(element);
+    document.querySelector(".gifts").innerText = document.querySelector(".gifts").innerText+'\n'+element;
+  }
+}
+valueGet();
+let rrr = document.querySelector(".total-price").innerText;
+console.log(rrr);
+let ttt = document.querySelector(".total-price-all").innerText;
+document.querySelector(".total-price-all").innerText = parseInt(ttt)+parseInt(rrr);
+}
