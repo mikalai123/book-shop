@@ -182,3 +182,23 @@ for(let i = 0; i < items.length; i++) {
 }
 }
 createElem();
+
+// Реализация попапа
+
+window.addEventListener("click", (event) => {
+  if(event.target.dataset.action === "action") {
+    const infoWrapper = event.target.closest(".info");
+    const div = infoWrapper.querySelector(".popap")
+    div.classList.add('open');
+  }
+  if(event.target.dataset.close) {
+    const infoWrapper = event.target.closest(".popap");
+    console.log(infoWrapper);
+    infoWrapper.classList.remove('open');
+  }
+  if(event.target.dataset.wrap) {
+    const infoWrapper = event.target.closest(".popap");
+    console.log(infoWrapper);
+    infoWrapper.classList.remove('open');
+  }
+})

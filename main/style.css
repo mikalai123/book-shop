@@ -73,3 +73,34 @@ button:hover {
     width: 100px;
     background: violet;
 }
+.popap {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background: rgba(41, 41, 41, 0.6);
+}
+.popap.open {
+    display: flex;
+}
+.popap.close {
+    display: none;
+}
+.descriptionPopap {
+    max-width: 600px;
+    min-height: 68px;
+    font-size: 20px;
+    background: white;
+}
+.book:hover {
+    cursor: pointer;
+}
+.book:hover .card-kop3ina {
+    display: block;
+}
