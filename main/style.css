@@ -1,0 +1,266 @@
+
+*,
+*::after,
+*::before{
+  box-sizing: border-box;
+}
+.logo {
+    width: 60px;
+}
+.kop3ina {
+    width: 50px;
+}
+.check {
+    color: white;
+    width: 20px;
+    background: deeppink;
+    border-radius: 100%;
+    position: absolute;
+    margin-top: -32px;
+    margin-left: 25px;
+    text-align: center;
+}
+.header-wrapper {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.book-shop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.book {
+    width: 400px;
+    margin-top: 50px;
+    border-radius: -6px;
+    background: azure;
+}
+.book:hover {
+    box-shadow: 10px 10px 10px black;
+}
+.wrapper {
+    display: flex;
+    width: 400px;
+}
+.wrapper-control {
+    display: inline-flex;
+    border: 2px solid;
+}
+.control-minus,
+.control-plus {
+    height: 25px;
+    width: 25px;
+}
+.control-current {
+    width: 30px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+button:hover {
+    cursor: pointer;
+}
+.img-book {
+    width: 200px;
+    border-style: outset;
+}
+.price-total-element {
+    display: flex;
+}
+.popap-card {
+    margin-left: 19px;
+}
+.card-kop3ina {
+    display: none;
+    width: 100px;
+    border-radius: 15px;
+    margin-left: 48px;
+    margin-top: 22px;
+    background: violet;
+}
+.popap {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background: rgba(41, 41, 41, 0.6);
+}
+.kill-book {
+    width: 49px;
+    height: 29px;
+    border-radius: 68px;
+}
+.order {
+    width: 130px;
+    height: 30px;
+    border: 2px solid;
+    border-radius: 30px;
+    background-color: greenyellow;
+}
+.clin {
+    width: 130px;
+    height: 30px;
+    border: 2px solid;
+    border-radius: 30px;
+    background-color: #ab2727;
+    margin-top: 10px;
+}
+.popap.open {
+    display: flex;
+}
+.popap.close {
+    display: none;
+}
+.descriptionPopap {
+    max-width: 600px;
+    min-height: 68px;
+    font-size: 20px;
+    background: white;
+}
+.book:hover {
+    cursor: pointer;
+}
+.book:hover .card-kop3ina {
+    display: block;
+}
+.card-kop3ina:hover {
+    background: orange;
+    transition: all 0.4s;
+}
+.close {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 100%;
+    border: 2px solid black;
+    position: absolute;
+    margin-top: -10px;
+    margin-left: 598.6px;
+    cursor: pointer;
+  }
+  .card-block {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    z-index: 1;
+    padding-top: 100px;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(41, 41, 41, 0.6);
+}
+.total-block,
+.total-price {
+    background-color: white;
+}
+.card-block.open {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+  .card-block-wrapper {
+    width: 320px;
+    height: 150px;
+    background: white;
+    align-items: center;
+    display: flex;
+}
+.img-block {
+    width: 85px;
+}
+.message {
+    color: red;
+}
+.check-list {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    z-index: 1;
+    padding-top: 700px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: white;
+}
+.check-list-complete {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: white;
+}
+.check-list.open {
+    display: flex;
+    flex-flow: column;
+}
+.check-list-complete.open {
+    display: flex;
+    flex-flow: column;
+}
+#form1 {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.form {
+    border: 4px solid gray;
+    border-radius: 7px;
+    display: flex;
+    flex-flow: column;
+    padding: 30px;
+}
+.form-complete {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 4px solid gray;
+    border-radius: 7px;
+    display: flex;
+    flex-flow: column;
+    padding: 30px;
+}
+.re {
+    width: 150px;
+    outline-color:red;
+}
+.rt {
+    width: 150px;
+    outline-color:rgb(0, 255, 76);
+}
+input:invalid + span::after {
+  content: '✖';
+  color: red;
+}
+
+input:valid+span::after {
+  content: '✓';
+  color: rgb(9, 244, 9);
+  border-color: rgb(9, 244, 9);
+}
+input:invalid {
+  border: 2px solid red;
+  border-color: red;    
+}
+.complete {
+    width: 141px;
+    border-radius: 10px;
+    margin: 0 auto;
+    background-color: gold;
+}

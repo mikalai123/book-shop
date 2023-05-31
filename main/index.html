@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book-shop</title>
+    <link rel="stylesheet" href="../main/style.css">
+</head>
+<body>
+    <header class="header">
+    </header>
+    <main>
+        <div class="book-shop"></div>
+        <div class="check-list">
+            <form action="" id="form1">
+                <div class="form">
+                    <p><label for="name">Name :</label><input type="text" id="name" placeholder="Not less than 4 symbols" minlength="4" required><span class="validity"></span></p>
+                    <p class="message" id="message"></p>
+                    <p><label for="surname">Surname:</label><input type="text" id="surname" placeholder="Not less than 5 symbols" minlength="5" required ><span class="validity"></span></p>
+                    <p class="message" id="messageSurname"></p>
+                </div>
+                <hr>
+                <div class="form">
+                    <p><label for="date">Delivery date:</label><input type="date" id="date"  min="2023-05-15" required><span class="validity"></span></p>
+                </div>
+                <hr>
+                <div class="form">
+                    <label>Delivery address</label>
+                <label for="street">Street:</label>
+                <p><input type="text" id="street" placeholder="Not less than 5 symbols" minlength="5" required><span class="validity"></span></p>
+                <p class="message" id="messageStreet"></p>
+                <p><label for="house">House number:</label><input type="text" id="house" placeholder="Mandatory, numbers only" required><span class="validity"></span></p>
+                <p class="message" id="messageHouse"></p>
+                </div>
+                <hr>
+                <div class="form">
+                    <p><label for="phone">House number:</label><input id="phone" type="tel" placeholder="Mandatory, numbers only" required><span class="validity"></span></p>    
+                <p class="message" id="messagePhone"></p>
+                </div>
+                <hr>
+                <div class="form">
+                    <label>Choose the payment type:</label>
+                    <p><label for="cash">Cash</label><input class="radio-type" name="radio" type="radio" id="cash" value="Cash" checked></p>
+                    <p><label for="card">Card </label><input class="radio-type" name="radio" type="radio" id="card" value="Card"></p>
+                </div>
+                <hr>
+                <div class="form">
+                    <label>Choose 2 gifts: (optional)</label>
+                    <input data-checkbox="checkbox" type="checkbox" name="checkbox" id="gift" value="Pack as a gift"><label for="gift">Pack as a gift</label>
+                    <input data-checkbox="checkbox" type="checkbox" name="checkbox" id="postcard" value="Add postcard"><label for="postcard">Add postcard</label>
+                    <input data-checkbox="checkbox" type="checkbox" name="checkbox" id="discount" value="Provide 2% discount to the next time"><label for="discount">Provide 2% discount to the next time</label>
+                    <input data-checkbox="checkbox" type="checkbox" name="checkbox" id="pen" value="Branded pen or pencil"><label for="pen">Branded pen or pencil</label>
+                    <p class="message" id="messageGifts"></p>
+                </div>
+            </form>
+            <hr>
+            <button class="complete" data-order1="order1">Complete</button>
+        </div>
+        <div class="check-list-complete">
+            <form action="" class="form-complete">
+                <h2>Your order</h2>
+                <p class="name">Name:</p>
+                <p class="surname">Surname:</p>
+                <p class="date">Delivery date:</p>
+                <p class="street">Street:</p>
+                <p class="house">House:</p>
+                <p class="phone">Phone:</p>
+                <p class="payment">Choose the payment type:</p>
+                <p class="gifts">Choose 2 gifts:</p>
+                <div>
+                    <span class="total-block">Order price:</span>
+                    <span class="total-price-all">0</span>
+                </div>
+            </form>
+
+        </div>
+    </main>
+   
+    <script src="../main/index.js"></script>
+</body>
+</html>
