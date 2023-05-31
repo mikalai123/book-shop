@@ -68,9 +68,15 @@ button:hover {
 .price-total-element {
     display: flex;
 }
+.popap-card {
+    margin-left: 19px;
+}
 .card-kop3ina {
     display: none;
     width: 100px;
+    border-radius: 15px;
+    margin-left: 48px;
+    margin-top: 22px;
     background: violet;
 }
 .popap {
@@ -85,6 +91,26 @@ button:hover {
     height: 100%;
     overflow: auto; 
     background: rgba(41, 41, 41, 0.6);
+}
+.kill-book {
+    width: 49px;
+    height: 29px;
+    border-radius: 68px;
+}
+.order {
+    width: 130px;
+    height: 30px;
+    border: 2px solid;
+    border-radius: 30px;
+    background-color: greenyellow;
+}
+.clin {
+    width: 130px;
+    height: 30px;
+    border: 2px solid;
+    border-radius: 30px;
+    background-color: #ab2727;
+    margin-top: 10px;
 }
 .popap.open {
     display: flex;
@@ -231,4 +257,10 @@ input:valid+span::after {
 input:invalid {
   border: 2px solid red;
   border-color: red;    
+}
+.complete {
+    width: 141px;
+    border-radius: 10px;
+    margin: 0 auto;
+    background-color: gold;
 }

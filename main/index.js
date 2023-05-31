@@ -87,9 +87,9 @@ header.innerHTML = `
     </button>
     <div id="check" class="check">0</div>
     <div class="card-block" data-closeWrap="wrap">
-    <p><span class="total-block">Итого:</span><span class="total-price">0</span></p>
-    <button data-order="order">Confirm order</button>
-    <button data-clin="clin">Cancel the order</button>
+    <p><span class="total-block">Total:</span><span class="total-price">0</span></p>
+    <button class="order" data-order="order">Confirm order</button>
+    <button class="clin" data-clin="clin">Cancel the order</button>
     </div>
   </div>
 </div>
@@ -258,9 +258,9 @@ window.addEventListener("click", (event) => {
     const infoBlock = document.querySelector(".card-block");
     infoBlock.classList.remove('open');
     infoBlock.innerHTML=`
-    <div><span>Итого:</span><span class="total-price">0</span></div>
-    <button data-order="order">Confirm order</button>
-    <button data-clin="clin">Cancel the order</button>`;
+    <div><span class="total-block">Total:</span><span class="total-price">0</span></div>
+    <button class="order" data-order="order">Confirm order</button>
+    <button class="clin" data-clin="clin">Cancel the order</button>`;
     const val = document.getElementById("check");
     val.innerText = 0;
   }
@@ -425,7 +425,7 @@ window.addEventListener("click", function(e) {
   }
     if (checkboxes.length ==2) {
     document.getElementById('messageGifts').style.color="green";
-    document.getElementById('messageGifts').innerHTML = `Прекрасный выбор!`;
+    document.getElementById('messageGifts').innerHTML = `Great choice!`;
   }
   if (checkboxes.length >2) {
     for (let index = 0; index < inputs.length; index++) {
