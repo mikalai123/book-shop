@@ -104,3 +104,18 @@ button:hover {
 .book:hover .card-kop3ina {
     display: block;
 }
+.card-kop3ina:hover {
+    background: orange;
+    transition: all 0.4s;
+}
+.close {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 100%;
+    border: 2px solid black;
+    position: absolute;
+    margin-top: -10px;
+    margin-left: 598.6px;
+    cursor: pointer;
+  }

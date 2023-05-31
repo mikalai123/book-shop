@@ -202,3 +202,89 @@ window.addEventListener("click", (event) => {
     infoWrapper.classList.remove('open');
   }
 })
+// Добавление книг в корзину
+
+window.addEventListener("click", (event) => {
+  // const kop3ina = document.querySelectorAll(".card-kop3ina");
+  // console.log(kop3ina);
+  if (event.target.dataset.cardKop3ina) {
+    // находим карту книги
+    const book = event.target.closest(".book");
+    // собираем данные по книге
+    const productBook = {
+      id: book.dataset.id,
+      imgSrc: book.querySelector(".img-book").getAttribute("src"),
+      author: book.querySelector(".author").innerText,
+      title: book.querySelector(".title").innerText,
+      price: book.querySelector(".price").innerText,
+    }
+    console.log(productBook);
+    // Создаем и добавляем карточку в корзину
+    const cardItemBook = `<div class="card-block-wrapper" id="${productBook.id}">
+                                  <img class="img-block" src="${productBook.imgSrc}" alt="jhg">
+                                  <div class="block">
+                                      <p class="author-block">${productBook.author}</p>
+                                      <p class="title-block">${productBook.title}</p>
+                                      <p class="price-total-element">
+                                          <span class="price-element">Price:</span>
+                                          <span class="price-block">${productBook.price}</span>
+                                      </p>
+                                  </div>
+                                  <button class="kill-book" data-kill="kill">X</button>
+                              </div>`;
+    
+    cardWrap.insertAdjacentHTML("afterbegin", cardItemBook);
+
+    // при клике на книгу меняем значение корзины
+    const val = document.getElementById("check");
+    val.innerText = ++val.innerText;
+
+  }
+})
+
+ // Открытие и закрытие корзины
+window.addEventListener("click", (event) => {
+  if(event.target.dataset.checkout) {
+    const checkout = document.querySelector(".card-block");
+    checkout.classList.add('open');
+    calcPrice();
+  }
+  if(event.target.dataset.closewrap) {
+    const infoBlock = document.querySelector(".card-block");
+    infoBlock.classList.remove('open');
+  }
+  if(event.target.dataset.clin) {
+    console.log("clin");
+    const infoBlock = document.querySelector(".card-block");
+    infoBlock.classList.remove('open');
+    infoBlock.innerHTML=`
+    <div><span>Итого:</span><span class="total-price">0</span></div>
+    <button data-order="order">Confirm order</button>
+    <button data-clin="clin">Cancel the order</button>`;
+    const val = document.getElementById("check");
+    val.innerText = 0;
+  }
+  if(event.target.dataset.kill) {
+    console.log("kill");
+    const book = event.target.closest(".card-block-wrapper").remove();
+    const val = document.getElementById("check");
+    val.innerText = --val.innerText;
+    calcPrice();
+  }
+})
+
+
+// Суммируем стоимость корзины
+
+function calcPrice() {
+  const priceEl = document.querySelectorAll(".card-block-wrapper");
+  const total =document.querySelector(".total-price");
+  let priceTotal = 0;
+
+  priceEl.forEach(function(item) {
+    const ddd = item.closest(".card-block-wrapper").querySelector(".price-block");
+    console.log(ddd);
+    priceTotal += parseInt(ddd.innerText);
+  })
+  total.innerText = priceTotal;
+}
